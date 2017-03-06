@@ -1,24 +1,19 @@
-# README
+# API provider
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+an API provider for the backend of Ad-Creator application built on Cucumber and RSpec on BDD.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+  - `Ruby 2.3.0`
+  - `Rails 5.0.1`
 
-* System dependencies
+## Backgrond
 
-* Configuration
+To practice building an API provider as well as getting used to BDD using Cucmber and RSpec. 
 
-* Database creation
+## Features
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * Users are able to create ads containing a title, a description and a price.
+  * Users can make an offer to an existing ad, with a message and a price which can be different.
+  * The client can retrieve all existing ads.
+  * The client can retrieve an ad with its corresponding offers, sorted by price.
