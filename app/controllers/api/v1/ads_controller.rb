@@ -3,7 +3,7 @@ module Api
     class AdsController < ApplicationController
       def create
         ad = Ad.create(ad_params)      
-        render json: { Message: 'Ad created successfully', id: ad.id}
+        render json: { message: 'Ad created successfully', id: ad.id}
       end
 
       private
