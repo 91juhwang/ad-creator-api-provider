@@ -13,7 +13,7 @@ RSpec.describe Api::V1::AdsController, type: :controller do
 
     context 'when valid parameters are passed' do
       before do
-        expect(Ad).to receive(:create).with(permitted_params).and_return(FactoryGirl.build(:ad, id: 1))
+        expect(Ad).to receive(:create!).with(permitted_params).and_return(ad)
         execute_request
       end
 
@@ -33,7 +33,7 @@ RSpec.describe Api::V1::AdsController, type: :controller do
         execute_request
       end
       it 'should return model validation errors' do
-        expect(JSON.parse(response.body)).to eq(JSON.parse('{"errors": {"title": ["can\'t be blank"]}}'))
+        expect(JSON.parse(response.body)).to eq(JSON.parse('{ "errors": {"title": ["can\'t be blank"] }}'))
       end
 
       it 'should return unprocessable entity response' do
