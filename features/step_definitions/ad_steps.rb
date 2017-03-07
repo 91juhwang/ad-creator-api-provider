@@ -16,3 +16,12 @@ When(/^the client makes a POST \/v(\d+)\/ads request with blank title and user_i
   params = valid_ad_creation_params(id).merge(title: '')
   post "/v#{version}/ads", params
 end
+
+Given(/^an ad with id "([^"]*)"$/) do |id|
+  FactoryGirl.create(:ad, id: id)
+end
+
+When(/^the client makes a valid POST \/ads\/(\d+)\/offers with user_id: "([^"]*)"$/) do |ad_id, user_id|
+  params = FactoryGirl.attribute_for(:offer).merge(user_id: user_id)
+  post "/ads/#{ad_id}/offers", params
+end

@@ -18,3 +18,12 @@ Feature: Create an ad
     """
       { "errors": {"title": ["can\'t be blank"] }}
     """
+    
+  Scenario: using valid data
+    Given an ad with id "1"
+    And a user with id "2"
+    When the client makes a valid POST /ads/1/offers with user_id: "2"
+    Then response should have status 200 and JSON:
+    """
+      {"message": "Offer created successfully", "id": 1}
+    """
