@@ -27,3 +27,10 @@ Feature: Create an ad
     """
       {"message": "Offer created successfully", "id": 1}
     """
+
+  Scenario: using blank price
+    When the client makes a POST /ads/1/offers request with blank price and user_id: "2"
+    Then response should have status 422 and JSON:
+    """
+      {"errors": {"price": ["can't be blank"]}}
+    """

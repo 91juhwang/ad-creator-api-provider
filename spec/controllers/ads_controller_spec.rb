@@ -13,14 +13,8 @@ RSpec.describe Api::V1::AdsController, type: :controller do
         expect(Ad).to receive(:create!).with(permitted_params).and_return(ad)
         execute_request
       end
-
-      it 'should return a successful response' do
-        expect(response).to have_http_status(:success)
-      end
-
-      it 'should return success message with an ad_id' do
-        expect(JSON.parse(response.body)).to eq(JSON.parse('{"message": "Ad created successfully", "id": 1 }'))
-      end
+      it_responds_with 'a success status'
+      it_responds_with 'JSON body', '{"message": "Ad created successfully", "id": 1 }'
     end
 
     context 'when invalid parameters are passed' do
