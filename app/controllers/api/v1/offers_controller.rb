@@ -1,13 +1,11 @@
 module Api
   module V1
     class OffersController < ApplicationController
-      def create
-        offer = Offer.create!(offer_params)
-        render json: { message: 'Offer created successfully', id: offer.id }
-      end
-      
+      include ResourceController
+
       private
-      def offer_params
+
+      def permitted_params
         params.permit(:message, :price, :ad_id, :user_id)
       end
     end
