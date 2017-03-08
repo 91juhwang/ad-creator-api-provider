@@ -1,15 +1,12 @@
 require 'rails_helper'
+require 'controller_shared_context'
  
 RSpec.describe Api::V1::AdsController, type: :controller do
   describe 'POST create' do
+    include_context 'permit_params'
     let(:ad) { FactoryGirl.build(:ad, id: 1) }
     let(:params) { FactoryGirl.attributes_for(:ad).merge(user_id: '1') }
-    let(:permitted_params) { ActionController::Parameters.new(params) }
     let(:execute_request) { post :create, params: params }
-
-    before(:all) do 
-      ActionController::Parameters.permit_all_parameters = true
-    end
 
     context 'when valid parameters are passed' do
       before do

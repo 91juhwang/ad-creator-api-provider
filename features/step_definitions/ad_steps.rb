@@ -22,6 +22,6 @@ Given(/^an ad with id "([^"]*)"$/) do |id|
 end
 
 When(/^the client makes a valid POST \/ads\/(\d+)\/offers with user_id: "([^"]*)"$/) do |ad_id, user_id|
-  params = FactoryGirl.attribute_for(:offer).merge(user_id: user_id)
+  params = FactoryGirl.attributes_for(:offer).merge(user_id: user_id)
   post "/ads/#{ad_id}/offers", params
 end
