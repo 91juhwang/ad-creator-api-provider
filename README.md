@@ -28,7 +28,7 @@ Queries all the ads in the database.
 
 Creates an ad. Required parameteres are the title, description, price and the creating user's id.
 
-`POST '/ads?title=this_is_the_title&price=1000&description=this_is_the_description&user_id=1'
+`POST '/ads?title=this_is_the_title&price=1000&description=this_is_the_description&user_id=1'`
 
 ### Offers
 
