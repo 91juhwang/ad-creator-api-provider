@@ -24,21 +24,21 @@ To practice building an API provider as well as getting used to BDD using Cucmbe
 
 Queries all the ads in the database.
 
-`GET '/ads'`
+* `GET '/ads'`
 
 Creates an ad. Required parameteres are the title, description, price and the creating user's id.
 
-`POST '/ads?title=this_is_the_title&price=1000&description=this_is_the_description&user_id=1'`
+* `POST '/ads?title=this_is_the_title&price=1000&description=this_is_the_description&user_id=1'`
 
 ### Offers
 
 Queries all the offers for existing ads. The example queries the offer for the ad id of 1.
 
-`GET '/ads/1/offers'`
+* `GET '/ads/1/offers'`
 
 Creates an offer. Required parameteres are the associated ad_id, message, title, price and the user_id.
 
-`POST '/ads?title=this_is_the_title&price=1000&description=this_is_the_description&user_id=1'`
+* `POST '/ads?title=this_is_the_title&price=1000&description=this_is_the_description&user_id=1'`
 
 
 
